@@ -1,5 +1,6 @@
 package java_64;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Scanner;
@@ -40,6 +41,11 @@ public class Test_set {
 		ans = (String)HopPhieu.toArray()[pos];
 		return ans;
 	}
+	
+	public void ALL_TICKET() {
+		System.out.println(Arrays.toString(HopPhieu.toArray()));
+	}
+	
 	public static void main(String[] args) {
 		int luachon;
 		Test_set hom_phieu = new Test_set(); 
@@ -55,6 +61,7 @@ public class Test_set {
 			luachon = inp.nextInt();
 			inp.nextLine();
 			if(luachon <=3) {
+				if(luachon==0)break;
 				System.out.println("Nhap ma:");
 				String s= inp.nextLine();
 				if(luachon==1) hom_phieu.ADD(s);
@@ -74,8 +81,9 @@ public class Test_set {
 					hom_phieu.DELETE(win);
 				}
 			}
-			
 		}
 		while(luachon != 0);
+		System.out.println("Nhung phieu con lai trong hom:");
+		hom_phieu.ALL_TICKET();
 	}
 }
