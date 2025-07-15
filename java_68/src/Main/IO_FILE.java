@@ -1,7 +1,6 @@
 package Main;
 
 import java.io.File;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class IO_FILE {
@@ -39,10 +38,9 @@ public class IO_FILE {
 	public void FileChirld() {
 		if(file.isDirectory()) {
 			System.out.print("Folder/File con: ");
-			File arr[] = file.listFiles();
-			for (File x:arr)System.out.print(x.getName()+", ");
+			//File arr[] = file.listFiles();
+			for (File x:file.listFiles())System.out.print(x.getName()+", ");
 			System.out.println();
-			//System.out.println(Arrays.toString(arr));
 		}
 		else {
 			System.out.println("La File nen khong co Folder/File con");
@@ -54,14 +52,6 @@ public class IO_FILE {
 	}
 	
 	public void PrintTree(File f,int deg) {
-//		for( int i=0 ; i < deg ; i++ ) {
-//			System.out.println("\t");
-//			System.out.println(f.getName());
-//			File arr[] = f.listFiles();
-//			for (File fx : arr) {
-//				PrintTree(fx, deg+1);
-//			}
-//		}
 		for(int i=0 ; i<deg-1 ; i++)System.out.print("\t");
 		if(deg>1)System.out.print("`->");
 		System.out.println(f.getName() +" "+deg);
